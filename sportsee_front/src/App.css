@@ -1,0 +1,10 @@
+.recharts-default-legend {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 20px !important;
+}
+
+.recharts-surface > .recharts-polar-angle-axis > .recharts-polar-angle-axis-ticks {
+    fill: #FFF;
+}
