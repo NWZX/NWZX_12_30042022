@@ -1,5 +1,11 @@
 /* eslint-disable */
 
+/**
+ * @interface
+ * @name IUser
+ * @description
+ * This interface describes the user data.
+ */
 export interface IUser {
     main?: IUserMain;
     activity?: IUserActivity;
@@ -7,6 +13,9 @@ export interface IUser {
     performance?: IUserPerformance;
 }
 
+/**
+ * User main data schema
+ */
 export interface IUserMain {
     id: number;
     userInfos: {
@@ -22,6 +31,10 @@ export interface IUserMain {
         lipidCount: number;
     };
 }
+
+/**
+ * User activity data schema
+ */
 export interface IUserActivity {
     userId: number;
     sessions: {
@@ -30,6 +43,10 @@ export interface IUserActivity {
         calories: number;
     }[];
 }
+
+/**
+ * User average session data schema
+ */
 export interface IUserAvgSession {
     userId: number;
     sessions: {
@@ -37,6 +54,10 @@ export interface IUserAvgSession {
         sessionLength: number;
     }[];
 }
+
+/**
+ * User performance data schema
+ */
 export interface IUserPerformance {
     userId: number;
     kind: Record<number, string>;

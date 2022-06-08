@@ -1,5 +1,9 @@
 import { IUser } from '../interfaces/IUser';
 
+/**
+ * Mokup data for the user
+ * @returns {IUser}
+ */
 export async function getLocalData(): Promise<IUser> {
     return {
         main: {

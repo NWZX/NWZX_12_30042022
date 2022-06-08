@@ -37,6 +37,11 @@ const DataContext = createContext<[IDataContext, (type: TActionType, payload?: R
     () => {},
 ]);
 
+/**
+ * Provider for the Data Fetching Method
+ * @param param0 {apiRoute?: string; children: ReactNode}
+ * @returns {JSX.Element}
+ */
 export const DataContextProvider = ({
     children,
     apiRoute,
@@ -54,6 +59,14 @@ export const DataContextProvider = ({
 };
 
 type TUserContext = [user?: IUser, isLoading?: boolean, error?: Error];
+/**
+ * Public Entry Point to Fetch User Data
+ * @param id id of the user to fetch
+ * @param hasActivity Should the user have an activity?
+ * @param hasAvgSession Should the user have an average session?
+ * @param hasPerformance Should the user have a performance?
+ * @returns {TUserContext}
+ */
 export const useUserContext = (
     id: number,
     hasActivity?: boolean,

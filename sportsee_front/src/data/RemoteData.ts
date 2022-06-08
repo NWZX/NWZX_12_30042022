@@ -1,5 +1,10 @@
 import { IUser, IUserActivity, IUserAvgSession, IUserMain, IUserPerformance } from '../interfaces/IUser';
 
+/**
+ * Fetch method for GET requests
+ * @param url URL to fetch data from
+ * @returns {Promise<T>}
+ */
 const dataFetch = <T>(url: string): Promise<T> => fetch(url).then<T>((r) => r.json() as Promise<T>);
 // const dataPost = <T, D>(url: string, data: D, method: 'POST' | 'PUT' | 'DELETE' = 'POST'): Promise<T> =>
 //     fetch(url, {
@@ -15,13 +20,13 @@ interface IFD<T> {
 }
 
 /**
- * Get
- * @param apiRoute
- * @param id
- * @param hasActivity
- * @param hasAvgSession
- * @param hasPerformance
- * @returns
+ * Get data from the server
+ * @param apiRoute API route to get data from
+ * @param id ID of the user to get data for
+ * @param hasActivity Should the data contain activity data
+ * @param hasAvgSession Should the data contain average session data
+ * @param hasPerformance Should the data contain performance data
+ * @returns {Promise<IUser>}
  */
 export async function getRemoteData(
     apiRoute: string,
