@@ -20,12 +20,12 @@ const AppAvgSessionCard: React.VFC<Props> = ({ sessions }) => {
     return (
         <Box
             w={'100%'}
-            h={'263px'}
+            h={{ base: '200px', xl: '263px' }}
             bg={['#FF0000']}
             borderRadius={5}
             boxShadow={['0px 2px 4px rgba(0, 0, 0, 0.0212249)']}
             gap={5}
-            p={'32px'}
+            p={{ base: '8px', xl: '32px' }}
             alignItems="center"
             position={'relative'}
         >

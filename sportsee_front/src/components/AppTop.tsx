@@ -14,13 +14,13 @@ const AppTop: React.VFC<Props> = ({ username, isLoading }) => {
             textAlign={'justify'}
             w={'100%'}
             direction="column"
-            gap={10}
-            marginBottom={16}
+            gap={{ base: 8, xl: 10 }}
+            marginBottom={{ base: 8, xl: 16 }}
         >
             {isLoading ? (
                 <SkeletonText noOfLines={1} />
             ) : (
-                <Text color={'black'} fontWeight={'500'} fontSize={['48px']} lineHeight={['24px']}>
+                <Text color={'black'} fontWeight={'500'} fontSize={{ base: '38px', xl: '48px' }} lineHeight={['24px']}>
                     {'Bonjour '}
                     <Box as="span" color={'primary.main'}>
                         {username || ''}
@@ -30,7 +30,7 @@ const AppTop: React.VFC<Props> = ({ username, isLoading }) => {
             {isLoading ? (
                 <SkeletonText noOfLines={1} />
             ) : (
-                <Text color={'black'} fontWeight={'500'} fontSize={['18px']} lineHeight={['24px']}>
+                <Text color={'black'} fontWeight={'500'} fontSize={{ base: '16px', xl: '18px' }} lineHeight={['24px']}>
                     Félicitation ! Vous avez explosé vos objectifs hier 👏
                 </Text>
             )}

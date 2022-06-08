@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useMediaQuery } from '@chakra-ui/react';
 import React from 'react';
 import { ResponsiveContainer, PieChart, Pie } from 'recharts';
 
@@ -7,15 +7,16 @@ interface Props {
 }
 
 const AppScoreCard: React.VFC<Props> = ({ score }) => {
+    const [isXLarge] = useMediaQuery('(min-width: 80em)');
     return (
         <Box
             w={'100%'}
-            h={'263px'}
+            h={{ base: '200px', xl: '263px' }}
             bg={['secondary.main']}
             borderRadius={5}
             boxShadow={['0px 2px 4px rgba(0, 0, 0, 0.0212249)']}
             gap={5}
-            p={'32px'}
+            p={{ base: '8px', xl: '32px' }}
             alignItems="center"
             position={'relative'}
         >
@@ -41,8 +42,8 @@ const AppScoreCard: React.VFC<Props> = ({ score }) => {
                         nameKey="name"
                         cx="50%"
                         cy="50%"
-                        innerRadius={90}
-                        outerRadius={100}
+                        innerRadius={isXLarge ? 90 : 45}
+                        outerRadius={isXLarge ? 100 : 55}
                         startAngle={90}
                         endAngle={450}
                         cornerRadius={10}
@@ -55,13 +56,13 @@ const AppScoreCard: React.VFC<Props> = ({ score }) => {
                 top={'50%'}
                 left={'50%'}
                 transform={'translate(-50%, -50%)'}
-                fontSize={26}
+                fontSize={{ base: 16, xl: 26 }}
                 fontWeight={700}
                 lineHeight={'26px'}
             >
                 {score * 100}%
                 <br />
-                <Text as={'span'} fontSize={16} fontWeight={500} color={'#74798C'}>
+                <Text as={'span'} fontSize={{ base: 12, xl: 16 }} fontWeight={500} lineHeight={0} color={'#74798C'}>
                     de votre
                     <br />
                     objectif

@@ -13,7 +13,7 @@ const AppFooter: React.VFC<Props> = () => {
             id="footer"
             as={'footer'}
             fontFamily={'Roboto'}
-            w={117}
+            w={{ base: 87, xl: 117 }}
             h={'100%'}
             bgColor={'black'}
             gap={4}
@@ -22,10 +22,10 @@ const AppFooter: React.VFC<Props> = () => {
             top={0}
             zIndex={-1}
         >
-            <IconFooter1 color={'primary.main'} w={'64px'} h={'64px'} />
-            <IconFooter2 color={'primary.main'} w={'64px'} h={'64px'} />
-            <IconFooter3 color={'primary.main'} w={'64px'} h={'64px'} />
-            <IconFooter4 color={'primary.main'} w={'64px'} h={'64px'} />
+            <IconFooter1 color={'primary.main'} w={{ base: '54px', xl: '64px' }} h={{ base: '54px', xl: '64px' }} />
+            <IconFooter2 color={'primary.main'} w={{ base: '54px', xl: '64px' }} h={{ base: '54px', xl: '64px' }} />
+            <IconFooter3 color={'primary.main'} w={{ base: '54px', xl: '64px' }} h={{ base: '54px', xl: '64px' }} />
+            <IconFooter4 color={'primary.main'} w={{ base: '54px', xl: '64px' }} h={{ base: '54px', xl: '64px' }} />
             <Text
                 fontSize={[12]}
                 color={'white'}

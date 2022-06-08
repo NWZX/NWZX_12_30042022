@@ -34,13 +34,13 @@ const AppDayActivityCard: React.VFC<Props> = ({ sessions }) => {
             borderRadius={5}
             boxShadow={['0px 2px 4px rgba(0, 0, 0, 0.0212249)']}
             gap={5}
-            p={'32px'}
+            p={{ base: '8px', xl: '32px' }}
             alignItems="center"
             position={'relative'}
         >
             <Text
                 position={'absolute'}
-                top={'10%'}
+                top={{ base: '12px', xl: '32px' }}
                 left={'5%'}
                 fontSize={15}
                 fontWeight={500}
